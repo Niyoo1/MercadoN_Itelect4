@@ -17,7 +17,7 @@ class employeecontroller extends Controller
 
     public function create(){
         employee::create($request->all());
-        return view ('employee.create');
+        return view ('employee.create', compact('employees'));
     }
 
     public function store(Request $request)
@@ -31,10 +31,11 @@ class employeecontroller extends Controller
         'zip' => 'required|integer',
         
     ]);
-    }
-    // employee::create($request->all());
-    // return view ('employee.create');
-    // }
+    
+    employee::create($request->all());
+    return view ('employee.create');
+    }   
+    
 
 
         

@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     // Employee Management
     Route::get('employee', [\App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.index');
     Route::get('employee/create', [\App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.create');
+    Route::post('employee', [\App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.store');
     //end of employee management
     
 
