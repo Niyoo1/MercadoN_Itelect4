@@ -50,7 +50,7 @@
                                 </thead>
                                 <tbody>
                                     <tr> 
-                                        @foreach($employee as employee)
+                                        @foreach($employee as $items)
                                         <td class="">{{$items->id}}</td>
                                         <td>{{$firstname->fname}}</td>
                                         <td>{{$lastname->lname}}</td>
