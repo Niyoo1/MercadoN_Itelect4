@@ -16,6 +16,7 @@ class employeecontroller extends Controller
     }
 
     public function create(){
+        employee::create($request->all());
         return view ('employee.create');
     }
 
