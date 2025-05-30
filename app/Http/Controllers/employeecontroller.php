@@ -12,28 +12,26 @@ class employeecontroller extends Controller
     {   
         $employees = employee::get();
 
-        return view ('employee.index');
+        return view ('employee.index', compact('Employee'));
     }
 
-    public function index(){
+    public function create(){
         employee::create($request->all());
         return view ('employee.create');
 
     }
 
-    public function index(Request $request){
-        employee::index($request ());
-        return view('Employee.create');
-        {
-
-            'fname = fname[255]string';
-            'lastname = lname[255]string';
-            'middlename = midname[255]string';
-            'age = age[255]integer';
-            'address= address[255]string';
-            'zip = zip[255]integer';
-        }
-
+    public function store(Request $request)
+    {
+    $request->validate([
+        'fname' => 'required|max:255|string',
+        'lname' => 'required|max:255|string',
+        'midname' => 'required|max:255|string',
+        'age' => 'required|integer',
+        'address' => 'required|max:255|string',
+        'zip' => 'required|integer',
+        
+    ]);
     }
     // employee::create($request->all());
     // return view ('employee.create');
